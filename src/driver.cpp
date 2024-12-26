@@ -263,3 +263,15 @@ int main(int argc, char** argv)
 		return -1;
 	}
 }
+
+// Test on ubuntu platform:
+// Compile
+// cmake . ; make
+// Run
+// ./lifelong -m maps/sorting_map.grid -k 400 --scenario=SORTING --simulation_window=5 --planning_window=10 --solver=PBS --seed=0 --simulation_time 20
+
+// Test on windows platform:
+// Compile
+// build by clion.
+// Run
+// ./lifelong -m ../maps/sorting_map.grid -k 800 --scenario=SORTING --simulation_window=5 --planning_window=10 --solver=PBS --seed=0 --simulation_time 25
