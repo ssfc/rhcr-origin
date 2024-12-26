@@ -1,6 +1,5 @@
+cmake_minimum_required (VERSION 3.22)
 project(lifelong)
-
-cmake_minimum_required (VERSION 2.6)
 set(CMAKE_CXX_STANDARD 11)
 
 IF(NOT CMAKE_BUILD_TYPE)
@@ -9,6 +8,11 @@ IF(NOT CMAKE_BUILD_TYPE)
     #SET(CMAKE_BUILD_TYPE "RELWITHDEBINFO")
     #SET(CMAKE_BUILD_TYPE "MINSIZEREL")
 ENDIF()
+
+if (WIN32)
+    set(CMAKE_TOOLCHAIN_FILE "C:/vcpkg/scripts/buildsystems/vcpkg.cmake")
+    set(CMAKE_PREFIX_PATH "C:/vcpkg/installed/x64-windows")
+endif()
 
 include_directories("inc")
 file(GLOB SOURCES "src/*.cpp")
