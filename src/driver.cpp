@@ -62,7 +62,7 @@ MAPFSolver* set_solver(const BasicGraph& G, const boost::program_options::variab
 		PBS* pbs = new PBS(G, *path_planner);
 		pbs->lazyPriority = vm["lazyP"].as<bool>();
         auto prioritize_start = vm["prioritize_start"].as<bool>();
-        if (vm["hold_endpoints"].as<bool>() or vm["dummy_paths"].as<bool>())
+        if (vm["hold_endpoints"].as<bool>() || vm["dummy_paths"].as<bool>())
             prioritize_start = false;
         pbs->prioritize_start = prioritize_start;
         pbs->setRT(vm["CAT"].as<bool>(), prioritize_start);
@@ -144,9 +144,9 @@ int main(int argc, char** argv)
 	po::notify(vm);
 
     // check params
-    if (vm["hold_endpoints"].as<bool>() or vm["dummy_paths"].as<bool>())
+    if (vm["hold_endpoints"].as<bool>() || vm["dummy_paths"].as<bool>())
     {
-        if (vm["hold_endpoints"].as<bool>() and vm["dummy_paths"].as<bool>())
+        if (vm["hold_endpoints"].as<bool>() && vm["dummy_paths"].as<bool>())
         {
             std::cerr << "Hold endpoints and dummy paths cannot be used simultaneously" << endl;
             exit(-1);

@@ -627,7 +627,7 @@ PBSNode* PBS::pop_node()
 
 void PBS::update_best_node(PBSNode* node)
 {
-    if (node->earliest_collision > best_node->earliest_collision or
+    if (node->earliest_collision > best_node->earliest_collision ||
         (node->earliest_collision == best_node->earliest_collision &&
             node->f_val < best_node->f_val))
         best_node = node;

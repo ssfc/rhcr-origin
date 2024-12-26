@@ -209,7 +209,7 @@ Path StateTimeAStar::run(const BasicGraph& G, const State& start,
         else
         {
             auto open_head = open_list.top();
-            assert(!focal_list.empty() or open_head->getFVal() > min_f_val);
+            assert(!focal_list.empty() || open_head->getFVal() > min_f_val);
             if (open_head->getFVal() > min_f_val)
             {
                 double new_min_f_val = open_head->getFVal();
