@@ -19,7 +19,7 @@ void set_parameters(BasicSystem& system, const boost::program_options::variables
 	system.travel_time_window = vm["travel_time_window"].as<int>();
 	system.consider_rotation = vm["rotation"].as<bool>();
 	system.k_robust = vm["robust"].as<int>();
-	system.hold_endpoints = vm["hold_endpoints"].as<bool>();
+	system.hold_endpoints = vm["hold_endpoints"].as<bool>(); // 如果只plan一步, 不用担心hold endpoints
 	system.useDummyPaths = vm["dummy_paths"].as<bool>();
 	if (vm.count("seed"))
 		system.seed = vm["seed"].as<int>();
